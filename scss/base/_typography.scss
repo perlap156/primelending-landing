@@ -1,0 +1,88 @@
+@use "./_mixins";
+@use "./_variables" as *;
+
+//Global Variables
+$min_width: 20rem; // 320px
+$max_width: 87.5rem; // 1400px
+$min_font: 0.694rem;
+$max_font: 2.986rem; // 47.78px
+
+
+body, a {
+    $min_font: 1rem;
+    $max_font: 1rem;
+    @include mixins.fluid-type($min_width, $max_width, $min_font, $max_font);
+    color: white;
+}
+
+p {
+    font-family: $paragraph;
+    line-height: 30px;
+    margin-bottom: 39px;
+
+    @media (max-width: 640px) {
+        margin-bottom: 22px;
+    }
+}
+
+.eyebrow {
+    $max_font: 0.75rem; 
+    $min_font: 0.75rem; 
+
+    @include mixins.fluid-type($min_width, $max_width, $min_font, $max_font);
+    text-transform: uppercase;
+    font-family: $heading;
+    line-height: 30px;
+    letter-spacing: 16%;
+}
+
+.heading {
+    $max_font: 4.06rem; 
+    $min_font: 2.81rem; 
+    
+    @include mixins.fluid-type($min_width, $max_width, $min_font, $max_font);
+    font-family: $heading;
+    font-weight: 600;
+    line-height: 69px;
+    margin-bottom: 39px;
+
+    @media (max-width: 640px) {
+        margin-bottom: 22px;
+        line-height: 44px;
+    }
+
+    span {
+        color: $secondary-color;
+    }
+}
+
+// CTA Button
+.btn {
+    $max_font: 1.125rem; 
+    $min_font: 1.125rem; 
+    
+    @include mixins.fluid-type($min_width, $max_width, $min_font, $max_font);
+    font-family: $paragraph-2;
+    line-height: 18px;
+    font-weight: 400;
+    text-decoration: none;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 198px;
+    border-radius: 4px;
+    background-color: $secondary-color;
+    color: $primary-color;
+    padding: 26px 36px;
+    filter: drop-shadow(0px 3px 4px rgb(0 0 0 / 0.12));
+
+    @media (max-width: 768px) {
+      max-width: none;
+   }
+
+    p {
+        margin: 0 15px 0 0;
+    }
+}

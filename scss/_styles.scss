@@ -3,6 +3,7 @@
 main {
    display: flex;
    position: relative;
+   padding: 0 5%;
    width: 100vw;
    min-height: 100vh; 
    overflow: hidden;  
@@ -23,7 +24,6 @@ main {
 .container {
    position: relative;
    z-index: 2;
-   padding: 5%;
    align-self: center;
    display: grid;
    align-items: center;
